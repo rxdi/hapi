@@ -1,0 +1,39 @@
+{
+  "name": "@rxdi/hapi",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rxdi/hapi.git"
+  },
+  "scripts": {
+    "postpublish": "git push -f ssh://git@gitlab.youvolio.com:522/rxdi/hapi.git && git push --tags && git push ssh://git@gitlab.youvolio.com:522/rxdi/hapi.git --tags"
+  },
+  "author": {
+    "name": "Kristian Tachev(Stradivario)",
+    "email": "kristiqn.tachev@gmail.com"
+  },
+  "keywords": [
+    "graphql",
+    "gapi",
+    "node",
+    "hapi"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rxdi/hapi/issues"
+  },
+  "homepage": "https://github.com/rxdi/hapi#readme",
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "peerDependencies": {
+    "@rxdi/core": "^0.0.1"
+  },
+  "dependencies": {
+    "hapi": "^17.5.1"
+  },
+  "devDependencies": {
+    "@rxdi/core": "^0.0.1",
+    "@types/hapi": "^17.0.12",
+    "@types/node": "^10.3.4"
+  }
+}
