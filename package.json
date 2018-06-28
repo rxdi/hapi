@@ -26,13 +26,13 @@
   "module": "index.js",
   "typings": "index.d.ts",
   "peerDependencies": {
-    "@rxdi/core": "^0.0.69"
+    "@rxdi/core": "^0.0.71"
   },
   "dependencies": {
     "hapi": "^17.5.1"
   },
   "devDependencies": {
-    "@rxdi/core": "^0.0.69",
+    "@rxdi/core": "^0.0.71",
     "@types/hapi": "^17.0.12",
     "@types/node": "^10.3.4"
   }
