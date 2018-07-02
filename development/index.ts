@@ -33,7 +33,6 @@ export class HapiModule {
     }
 }
 
-export * from './decorators';
 export * from './hapi.module.config';
 export * from './plugin/hapi.plugin';
 export * from './services/index';

@@ -45,7 +45,6 @@ HapiModule = HapiModule_1 = __decorate([
     })
 ], HapiModule);
 exports.HapiModule = HapiModule;
-__export(require("./decorators"));
 __export(require("./hapi.module.config"));
 __export(require("./plugin/hapi.plugin"));
 __export(require("./services/index"));
