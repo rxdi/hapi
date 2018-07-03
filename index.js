@@ -18,7 +18,7 @@ const inert_service_1 = require("./services/inert/inert.service");
 const open_service_1 = require("./services/open/open.service");
 let HapiModule = HapiModule_1 = class HapiModule {
     static forRoot(config) {
-        config = Object.assign({}, config);
+        config = Object.assign({}, config || new hapi_module_config_1.HapiConfigModel());
         config.randomPort && config.hapi.port ? config.hapi.port = null : null;
         return {
             module: HapiModule_1,

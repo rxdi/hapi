@@ -12,7 +12,7 @@ import { OpenService } from './services/open/open.service';
 })
 export class HapiModule {
     public static forRoot(config?: HapiConfigModel): ModuleWithServices {
-        config = Object.assign({}, config);
+        config = Object.assign({}, config || new HapiConfigModel());
         config.randomPort && config.hapi.port ? config.hapi.port = null : null;
         return {
             module: HapiModule,

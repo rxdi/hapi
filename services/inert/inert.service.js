@@ -35,7 +35,7 @@ let InertService = class InertService {
     register() {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.registerInertPlugin();
-            if (Object.keys(this.config.staticConfig).length) {
+            if (this.config.staticConfig) {
                 this.server.route(this.config.staticConfig);
             }
         });
