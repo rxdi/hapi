@@ -17,7 +17,7 @@ export class InertService {
 
     async register() {
         await this.registerInertPlugin();
-        if (Object.keys(this.config.staticConfig)) {
+        if (Object.keys(this.config.staticConfig).length) {
             this.server.route(this.config.staticConfig);
         }
     }
