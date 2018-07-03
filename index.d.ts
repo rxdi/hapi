@@ -1,7 +1,7 @@
 import { ModuleWithServices } from '@rxdi/core';
-import { HapiConfigInterface } from './hapi.module.config';
+import { HapiConfigModel } from './hapi.module.config';
 export declare class HapiModule {
-    static forRoot(config?: HapiConfigInterface): ModuleWithServices;
+    static forRoot(config?: HapiConfigModel): ModuleWithServices;
 }
 export * from './hapi.module.config';
 export * from './plugin/hapi.plugin';

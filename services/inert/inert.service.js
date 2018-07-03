@@ -35,7 +35,9 @@ let InertService = class InertService {
     register() {
         return __awaiter(this, void 0, void 0, function* () {
             yield this.registerInertPlugin();
-            this.server.route(this.config.staticConfig);
+            if (Object.keys(this.config.staticConfig)) {
+                this.server.route(this.config.staticConfig);
+            }
         });
     }
     registerInertPlugin() {
@@ -49,6 +51,6 @@ InertService = __decorate([
     __param(0, core_1.Inject(hapi_module_config_1.HAPI_SERVER)),
     __param(1, core_1.Inject(hapi_module_config_1.HAPI_CONFIG)),
     __metadata("design:paramtypes", [hapi_1.Server,
-        hapi_module_config_1.HapiConfigInterface])
+        hapi_module_config_1.HapiConfigModel])
 ], InertService);
 exports.InertService = InertService;

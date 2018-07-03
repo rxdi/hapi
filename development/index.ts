@@ -2,7 +2,7 @@ import { Server } from 'hapi';
 import { HapiPlugin } from './plugin/hapi.plugin';
 import { ServerService } from './services/server/server.service';
 import { ModuleWithServices, Module } from '@rxdi/core';
-import { HAPI_CONFIG, HapiConfigInterface, HAPI_SERVER, HAPI_PLUGINS } from './hapi.module.config';
+import { HAPI_CONFIG, HapiConfigModel, HAPI_SERVER, HAPI_PLUGINS } from './hapi.module.config';
 import { InertService } from './services/inert/inert.service';
 import { OpenService } from './services/open/open.service';
 
@@ -11,20 +11,20 @@ import { OpenService } from './services/open/open.service';
     plugins: [HapiPlugin]
 })
 export class HapiModule {
-    public static forRoot(config?: HapiConfigInterface): ModuleWithServices {
-        config = config || {};
+    public static forRoot(config?: HapiConfigModel): ModuleWithServices {
+        config = Object.assign({}, config);
         config.randomPort && config.hapi.port ? config.hapi.port = null : null;
         return {
             module: HapiModule,
             services: [
                 {
                     provide: HAPI_CONFIG,
-                    useValue: config || new HapiConfigInterface()
+                    useValue: config || new HapiConfigModel()
                 },
                 {
                     provide: HAPI_SERVER,
                     deps: [HAPI_CONFIG],
-                    useFactory: (config: HapiConfigInterface) => new Server(config.hapi)
+                    useFactory: (config: HapiConfigModel) => new Server(config.hapi)
                 },
                 {
                     provide: HAPI_PLUGINS,

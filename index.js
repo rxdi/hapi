@@ -18,14 +18,14 @@ const inert_service_1 = require("./services/inert/inert.service");
 const open_service_1 = require("./services/open/open.service");
 let HapiModule = HapiModule_1 = class HapiModule {
     static forRoot(config) {
-        config = config || {};
+        config = Object.assign({}, config);
         config.randomPort && config.hapi.port ? config.hapi.port = null : null;
         return {
             module: HapiModule_1,
             services: [
                 {
                     provide: hapi_module_config_1.HAPI_CONFIG,
-                    useValue: config || new hapi_module_config_1.HapiConfigInterface()
+                    useValue: config || new hapi_module_config_1.HapiConfigModel()
                 },
                 {
                     provide: hapi_module_config_1.HAPI_SERVER,
