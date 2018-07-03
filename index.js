@@ -14,6 +14,8 @@ const hapi_plugin_1 = require("./plugin/hapi.plugin");
 const server_service_1 = require("./services/server/server.service");
 const core_1 = require("@rxdi/core");
 const hapi_module_config_1 = require("./hapi.module.config");
+const inert_service_1 = require("./services/inert/inert.service");
+const open_service_1 = require("./services/open/open.service");
 let HapiModule = HapiModule_1 = class HapiModule {
     static forRoot(config) {
         config = config || {};
@@ -40,7 +42,7 @@ let HapiModule = HapiModule_1 = class HapiModule {
 };
 HapiModule = HapiModule_1 = __decorate([
     core_1.Module({
-        services: [server_service_1.ServerService],
+        services: [server_service_1.ServerService, inert_service_1.InertService, open_service_1.OpenService],
         plugins: [hapi_plugin_1.HapiPlugin]
     })
 ], HapiModule);

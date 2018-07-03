@@ -2,6 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@rxdi/core");
 class HapiConfigInterface {
+    constructor() {
+        this.staticConfig = {
+            method: 'GET',
+            path: '/public/{param*}',
+            handler: {
+                directory: {
+                    path: 'public',
+                    index: ['index.html', 'default.html']
+                }
+            }
+        };
+    }
 }
 exports.HapiConfigInterface = HapiConfigInterface;
 exports.HAPI_CONFIG = new core_1.InjectionToken('hapi-config-injection-token');

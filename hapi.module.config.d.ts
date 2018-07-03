@@ -1,7 +1,8 @@
 import { InjectionToken } from "@rxdi/core";
-import { PluginNameVersion, PluginBase, PluginPackage, ServerOptions } from 'hapi';
+import { PluginNameVersion, PluginBase, PluginPackage, ServerOptions, ServerRoute } from 'hapi';
 export declare class HapiConfigInterface {
     randomPort?: boolean;
+    staticConfig?: ServerRoute | ServerRoute[];
     hapi?: ServerOptions;
     plugins?: Array<PluginBase<any> & (PluginNameVersion | PluginPackage)>;
 }

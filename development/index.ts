@@ -3,9 +3,11 @@ import { HapiPlugin } from './plugin/hapi.plugin';
 import { ServerService } from './services/server/server.service';
 import { ModuleWithServices, Module } from '@rxdi/core';
 import { HAPI_CONFIG, HapiConfigInterface, HAPI_SERVER, HAPI_PLUGINS } from './hapi.module.config';
+import { InertService } from './services/inert/inert.service';
+import { OpenService } from './services/open/open.service';
 
 @Module({
-    services: [ServerService],
+    services: [ServerService, InertService, OpenService],
     plugins: [HapiPlugin]
 })
 export class HapiModule {

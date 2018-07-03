@@ -1,8 +1,18 @@
 import { InjectionToken } from "@rxdi/core";
-import { PluginNameVersion, PluginBase, PluginPackage, ServerOptions } from 'hapi';
+import { PluginNameVersion, PluginBase, PluginPackage, ServerOptions, ServerRoute } from 'hapi';
 
 export class HapiConfigInterface  {
     randomPort?: boolean;
+    staticConfig?: ServerRoute | ServerRoute[] = {
+        method: 'GET',
+        path: '/public/{param*}',
+        handler: {
+            directory: {
+                path: 'public',
+                index: ['index.html', 'default.html']
+            }
+        }
+    };
     hapi?: ServerOptions;
     plugins?: Array<PluginBase<any> & (PluginNameVersion | PluginPackage)>;
 
