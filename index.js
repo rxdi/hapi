@@ -10,11 +10,11 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 const hapi_1 = require("hapi");
-const hapi_plugin_1 = require("./plugin/hapi.plugin");
+const hapi_plugin_1 = require("./plugins/hapi.plugin");
 const server_service_1 = require("./services/server/server.service");
 const core_1 = require("@rxdi/core");
 const hapi_module_config_1 = require("./hapi.module.config");
-const inert_service_1 = require("./services/inert/inert.service");
+const inert_plugin_1 = require("./plugins/inert/inert.plugin");
 const open_service_1 = require("./services/open/open.service");
 let HapiModule = HapiModule_1 = class HapiModule {
     static forRoot(config) {
@@ -42,12 +42,12 @@ let HapiModule = HapiModule_1 = class HapiModule {
 };
 HapiModule = HapiModule_1 = __decorate([
     core_1.Module({
-        services: [server_service_1.ServerService, inert_service_1.InertService, open_service_1.OpenService],
-        plugins: [hapi_plugin_1.HapiPlugin]
+        services: [server_service_1.ServerService, open_service_1.OpenService],
+        plugins: [hapi_plugin_1.HapiPlugin, inert_plugin_1.InertPlugin]
     })
 ], HapiModule);
 exports.HapiModule = HapiModule;
 __export(require("./hapi.module.config"));
-__export(require("./plugin/hapi.plugin"));
+__export(require("./plugins/index"));
 __export(require("./services/index"));
 var HapiModule_1;

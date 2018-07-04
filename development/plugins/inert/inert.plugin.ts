@@ -1,10 +1,10 @@
-import { Service, Inject } from "@rxdi/core";
+import { Inject, Plugin } from "@rxdi/core";
 import { HAPI_SERVER, HAPI_CONFIG, HapiConfigModel } from "../../hapi.module.config";
 import { Server } from "hapi";
 import inert = require('inert');
 
-@Service()
-export class InertService {
+@Plugin()
+export class InertPlugin {
 
     constructor(
         @Inject(HAPI_SERVER) private server: Server,

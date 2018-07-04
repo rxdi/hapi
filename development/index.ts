@@ -1,14 +1,14 @@
 import { Server } from 'hapi';
-import { HapiPlugin } from './plugin/hapi.plugin';
+import { HapiPlugin } from './plugins/hapi.plugin';
 import { ServerService } from './services/server/server.service';
 import { ModuleWithServices, Module } from '@rxdi/core';
 import { HAPI_CONFIG, HapiConfigModel, HAPI_SERVER, HAPI_PLUGINS } from './hapi.module.config';
-import { InertService } from './services/inert/inert.service';
+import { InertPlugin } from './plugins/inert/inert.plugin';
 import { OpenService } from './services/open/open.service';
 
 @Module({
-    services: [ServerService, InertService, OpenService],
-    plugins: [HapiPlugin]
+    services: [ServerService, OpenService],
+    plugins: [HapiPlugin, InertPlugin]
 })
 export class HapiModule {
     public static forRoot(config?: HapiConfigModel): ModuleWithServices {
@@ -36,5 +36,5 @@ export class HapiModule {
 }
 
 export * from './hapi.module.config';
-export * from './plugin/hapi.plugin';
+export * from './plugins/index';
 export * from './services/index';

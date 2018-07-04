@@ -24,7 +24,7 @@ const core_1 = require("@rxdi/core");
 const hapi_module_config_1 = require("../../hapi.module.config");
 const hapi_1 = require("hapi");
 const inert = require("inert");
-let InertService = class InertService {
+let InertPlugin = class InertPlugin {
     constructor(server, config) {
         this.server = server;
         this.config = config;
@@ -46,11 +46,11 @@ let InertService = class InertService {
         });
     }
 };
-InertService = __decorate([
-    core_1.Service(),
+InertPlugin = __decorate([
+    core_1.Plugin(),
     __param(0, core_1.Inject(hapi_module_config_1.HAPI_SERVER)),
     __param(1, core_1.Inject(hapi_module_config_1.HAPI_CONFIG)),
     __metadata("design:paramtypes", [hapi_1.Server,
         hapi_module_config_1.HapiConfigModel])
-], InertService);
-exports.InertService = InertService;
+], InertPlugin);
+exports.InertPlugin = InertPlugin;

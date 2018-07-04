@@ -4,5 +4,5 @@ export declare class HapiModule {
     static forRoot(config?: HapiConfigModel): ModuleWithServices;
 }
 export * from './hapi.module.config';
-export * from './plugin/hapi.plugin';
+export * from './plugins/index';
 export * from './services/index';
