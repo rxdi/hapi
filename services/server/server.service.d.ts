@@ -1,5 +1,4 @@
-import { BootstrapLogger } from "@rxdi/core";
-import { ExitHandlerService } from "@rxdi/core/services/exit-handler/exit-handler.service";
+import { BootstrapLogger, ExitHandlerService } from "@rxdi/core";
 import { Server, PluginBase, PluginNameVersion, PluginPackage } from "hapi";
 export declare type PluginType<T> = (PluginBase<T> & (PluginNameVersion | PluginPackage))[];
 export declare class ServerService {

@@ -1,5 +1,4 @@
-import { Service, Inject, BootstrapLogger } from "@rxdi/core";
-import { ExitHandlerService } from "@rxdi/core/services/exit-handler/exit-handler.service";
+import { Service, Inject, BootstrapLogger, ExitHandlerService } from "@rxdi/core";
 import { HAPI_SERVER, HAPI_PLUGINS } from "../../hapi.module.config";
 import { Server, PluginBase, PluginNameVersion, PluginPackage } from "hapi";
 
