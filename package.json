@@ -25,9 +25,6 @@
   "homepage": "https://github.com/rxdi/hapi#readme",
   "module": "index.js",
   "typings": "index.d.ts",
-  "peerDependencies": {
-    "@rxdi/core": "^0.0.214"
-  },
   "dependencies": {
     "hapi": "^17.5.1",
     "inert": "^5.1.0",
