@@ -18,7 +18,7 @@ export class ServerService {
 
     async start() {
         if (this.plugins.length) {
-            this.registerPlugins(this.plugins);
+            await this.registerPlugins(this.plugins);
         }
         try {
             await this.server.start();
@@ -35,7 +35,7 @@ export class ServerService {
     }
 
     async registerPlugins<T>(plugins: PluginType<T>) {
-        plugins.forEach(plugin => this.server.register(plugin))
+        return await Promise.all(plugins.map(async p => await this.server.register(p)))
     }
 
 }

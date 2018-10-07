@@ -8,5 +8,5 @@ export declare class ServerService {
     private exitHandler;
     constructor(server: Server, plugins: PluginType<any>, logger: BootstrapLogger, exitHandler: ExitHandlerService);
     start(): Promise<void>;
-    registerPlugins<T>(plugins: PluginType<T>): Promise<void>;
+    registerPlugins<T>(plugins: PluginType<T>): Promise<void[]>;
 }

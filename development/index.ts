@@ -24,7 +24,10 @@ export class HapiModule {
                 {
                     provide: HAPI_SERVER,
                     deps: [HAPI_CONFIG],
-                    useFactory: (config: HapiConfigModel) => new Server(config.hapi)
+                    useFactory: (config: HapiConfigModel) => {
+                        delete config.plugins;
+                        return new Server(config.hapi);
+                    }
                 },
                 {
                     provide: HAPI_PLUGINS,
