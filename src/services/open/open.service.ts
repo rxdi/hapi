@@ -1,5 +1,5 @@
 import { Service, Inject } from "@rxdi/core";
-import opn = require('opn');
+import open = require('open');
 import { HAPI_SERVER } from "../../hapi.module.config";
 import { Server } from "hapi";
 
@@ -11,15 +11,15 @@ export class OpenService {
     ) { }
 
     async openServerPage() {
-        await opn(`http://${this.server.info.address}:${this.server.info.port}/public`);
+        await open(`http://${this.server.info.address}:${this.server.info.port}/public`);
     }
 
     async openGraphQLPage() {
-        await opn(`http://${this.server.info.address}:${this.server.info.port}/graphiql`);
+        await open(`http://${this.server.info.address}:${this.server.info.port}/graphiql`);
     }
 
     async openPage(link) {
-        await opn(link);
+        await open(link);
     }
 
 }
