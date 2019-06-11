@@ -7,8 +7,8 @@ import { InertPlugin } from './plugins/inert/inert.plugin';
 import { OpenService } from './services/open/open.service';
 
 @Module({
-    services: [ServerService, OpenService],
-    plugins: [HapiPlugin, InertPlugin]
+    services: [],
+    plugins: []
 })
 export class HapiModule {
     public static forRoot(config?: HapiConfigModel): ModuleWithServices {
@@ -16,7 +16,7 @@ export class HapiModule {
         config.randomPort && config.hapi.port ? config.hapi.port = null : null;
         return {
             module: HapiModule,
-            services: [
+            providers: [
                 {
                     provide: HAPI_CONFIG,
                     useValue: config || new HapiConfigModel()
@@ -33,7 +33,10 @@ export class HapiModule {
                     provide: HAPI_PLUGINS,
                     useValue: config.plugins || []
                 },
+                ServerService,
+                OpenService
             ],
+            plugins: [HapiPlugin, InertPlugin]
         };
     }
 }

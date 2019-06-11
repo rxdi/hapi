@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-Object.defineProperty(exports, "__esModule", { value: true });
 var HapiModule_1;
+Object.defineProperty(exports, "__esModule", { value: true });
 const hapi_1 = require("hapi");
 const hapi_plugin_1 = require("./plugins/hapi.plugin");
 const server_service_1 = require("./services/server/server.service");
@@ -23,7 +23,7 @@ let HapiModule = HapiModule_1 = class HapiModule {
         config.randomPort && config.hapi.port ? config.hapi.port = null : null;
         return {
             module: HapiModule_1,
-            services: [
+            providers: [
                 {
                     provide: hapi_module_config_1.HAPI_CONFIG,
                     useValue: config || new hapi_module_config_1.HapiConfigModel()
@@ -40,14 +40,17 @@ let HapiModule = HapiModule_1 = class HapiModule {
                     provide: hapi_module_config_1.HAPI_PLUGINS,
                     useValue: config.plugins || []
                 },
+                server_service_1.ServerService,
+                open_service_1.OpenService
             ],
+            plugins: [hapi_plugin_1.HapiPlugin, inert_plugin_1.InertPlugin]
         };
     }
 };
 HapiModule = HapiModule_1 = __decorate([
     core_1.Module({
-        services: [server_service_1.ServerService, open_service_1.OpenService],
-        plugins: [hapi_plugin_1.HapiPlugin, inert_plugin_1.InertPlugin]
+        services: [],
+        plugins: []
     })
 ], HapiModule);
 exports.HapiModule = HapiModule;
