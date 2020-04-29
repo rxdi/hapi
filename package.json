@@ -1,12 +1,11 @@
 {
   "name": "@rxdi/hapi",
-  "version": "0.7.45",
+  "version": "0.7.46",
   "repository": {
     "type": "git",
     "url": "https://github.com/rxdi/hapi"
   },
   "scripts": {
-    "postpublish": "git push -f ssh://git@gitlab.youvolio.com:522/rxdi/hapi.git && git push --tags && git push ssh://git@gitlab.youvolio.com:522/rxdi/hapi.git --tags",
     "build": "gapi build"
   },
   "author": {
